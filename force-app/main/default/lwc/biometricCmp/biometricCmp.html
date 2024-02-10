@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Biometrics Service Demo" icon-name="custom:privately_shared">
+        <div class="slds-var-m-around_medium">
+            Use device biometrics capabilities to verify current user is indeed device owner:
+            <lightning-button
+                variant="brand"
+                label="Verify" 
+                title="Verify device ownership using biometrics"
+                onclick={handleVerifyClick}
+                class="slds-var-m-left_x-small">
+            </lightning-button>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-formatted-text value={status}></lightning-formatted-text>
+        </div>
+    </lightning-card>
+</template>

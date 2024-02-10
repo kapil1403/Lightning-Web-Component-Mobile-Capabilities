@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="NFC Service Demo" icon-name="custom:phone_portrait">
+        <div class="slds-var-m-around_medium">
+            Choose an action to perform on an NFC tag:<br><br>
+
+            <lightning-button
+                variant="brand"
+                label="Read" 
+                title="Read the content of an NFC tag"
+                onclick={handleReadClick}>
+            </lightning-button>
+            <lightning-button
+                variant="brand"
+                label="Erase" 
+                title="Erase the content of an NFC tag"
+                onclick={handleEraseClick} 
+                class="slds-var-m-left_x-small">
+            </lightning-button>
+            <lightning-button
+                variant="brand"
+                label="Write" 
+                title="Write sample content to an NFC tag"
+                onclick={handleWriteClick} 
+                class="slds-var-m-left_x-small">
+            </lightning-button>
+        </div>
+
+        <div class="slds-var-m-around_medium">
+            <lightning-formatted-text value={status}></lightning-formatted-text>
+        </div>
+    </lightning-card>
+</template>
