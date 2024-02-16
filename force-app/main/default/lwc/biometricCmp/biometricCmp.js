@@ -8,30 +8,14 @@ export default class BiometricCmp extends LightningElement {
     connectedCallback(){
         this.barcodeScanner = getBarcodeScanner();
         this.biometricsService = getBiometricsService();
-        alert(JSON.stringify(this.biometricsService));
     }
 
     handleVerifyClick(){
-        /*let biometricsService = getBiometricsService();
-        alert(JSON.stringify(biometricsService));
-        // Check for device biometrics functionality, console log the results
-        const options = {
-            permissionRequestBody: "Required to confirm device ownership.",
-            additionalSupportedPolicies: ['PIN_CODE']
-        };
-        biometricsService.isBiometricsReady(options)
-        .then((results) => {
-            alert(results);
-        })
-        .catch((error) => {
-            alert(error.code);
-            alert(error.message);
-            // Handle cancellation or other errors here
-            console.error('Error code: ' + error.code); + 
-            console.error('Error message: ' + error.message);
-        });*/
         if(this.biometricsService.isAvailable()){
-            
+            const options = {
+                permissionRequestBody: "Required to confirm device ownership.",
+                additionalSupportedPolicies: ['PIN_CODE']
+            };
             this.biometricsService.checkUserIsDeviceOwner(options)
                 .then((result) => {
                 // Do something with the result
